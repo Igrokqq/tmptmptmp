@@ -1,5 +1,6 @@
 /* Global styles */
 
+@import './reset.css';
 @import './assets/fonts/fonts.css';
 
 body {
