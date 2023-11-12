@@ -33,23 +33,56 @@ const LabeledIcon = styled.div`
   display: flex;
   align-items: center;
 `;
+const Button = styled.button`
+  border: none;
+  outline: none;
+  background: none;
+  cursor: pointer;
+  font-family: Nunito, Calibri, Arial, sans-serif;
+  &.wide {
+    min-width: 138px;
+    height: 46px;
+    border-radius: 23px;
+  }
+  &.accent {
+    background: #8726B9;
+    color: white;
+  }
+  &.bold {
+    font-weight: 700;
+  }
+  &.border {
+    border: 1px solid var(--c-accent-purple);
+  }
+`;
 const HeaderLogo = styled(LabeledIcon)`
   font-family: Futura, Calibri, Arial, sans-serif;
   span {
     font-size: 24px;
     margin-left: 40px;
+    margin-right: 110px;
   }
 `;
 const HeaderLink = styled(LabeledIcon)`
-  font-family: 'Nunito Sans', Calibri, Arial, sans-serif;
   span {
     margin-left: 12px;
   }
 `;
 const HeaderLinks = styled.div`
   display: flex;
+  font-family: Nunito, Calibri, Arial, sans-serif;
+  font-weight: 500;
   a:last-child {
     margin-left: 83px;
+  }
+`;
+const HeaderUser = styled.div`
+  ${Button} {
+    margin-left: 6px;
+    &.services {
+      width: 46px;
+      height: 46px;
+    }
   }
 `;
 const Header = styled.header`
@@ -63,30 +96,29 @@ const Header = styled.header`
     height: 100%;
   }
 `;
-const Button = styled.button`
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-  &.wide {
-    min-width: 138px;
-    height: 46px;
-    border-radius: 23px;
-  }
-  &.accent {
-    background: #8726B9;
-    color: white;
-  }
-`;
 const PhotoBlock = styled.section`
-  background: url('${bgPhoto}') no-repeat center bottom / cover;
-  height: 100vh;
+  background: linear-gradient(#13002C56, #13002C56), url('${bgPhoto}') no-repeat center center / cover; /* #13002C56 */
+  height: 83vh;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 33%;
+    background-image: linear-gradient(transparent, var(--c-body));
+  }
   ${Container} {
-    height: 100%;
+    height: 80%;
     display: flex;
     align-items: center;
+    padding: 0 40px;
   }
   p {
+    font-family: Futura, Calibri, Arial, sans-serif;
+    line-height: 1.11em;
+    font-weight: 400;
     font-size: 68px;
     color: white;
     width: 531px;
@@ -99,14 +131,24 @@ const SectionDescription = styled.div`
   margin: 0 auto;
   .desc-txt-above {
     text-transform: uppercase;
+    font-weight: 600;
+    color: #7F30AC;
+    letter-spacing: -0.03em;
   }
   .desc-txt-large {
     font-size: 52px;
-    margin: 24px 0;
+    margin: 38px 0 25px;
+    font-family: Futura, Calibri, Arial, sans-serif;
+    line-height: 1.15em;
+    color: var(--c-accent-purple);
+  }
+  .desc-txt-below {
+    letter-spacing: -0.024em;
+    line-height: 1.55em;
   }
   &.left {
     text-align: left;
-    width: auto;
+    -width: auto;
     margin: initial;
   }
 `;
@@ -114,13 +156,20 @@ const DemoCard = styled.div`
   --card-radius: 32px;
   padding: 32px 32px 302px;
   border-radius: var(--card-radius);
-  border: 1px solid grey;
+  border: 1px solid #D9D9EB;
+  background: linear-gradient(#FAF4FF, #F0DDFF);
   position: relative;
   overflow: hidden;
   .card-title {
+    font-family: Futura, Calibri, Arial, sans-serif;
     font-size: 24px;
-    margin-bottom: 16px;
+    margin-bottom: 18px;
+    line-height: 1.2em;
     color: var(--c-accent-purple);
+  }
+  .card-description {
+    line-height: 1.62em;
+    letter-spacing: -0.024em;
   }
 `;
 const DemoCardPhoto = styled.div`
@@ -130,24 +179,24 @@ const DemoCardPhoto = styled.div`
   bottom: 0;
   left: 0;
   margin-top: auto;
-  --move-offset: calc(50% - var(--card-radius));
-  .img-wrapper {
-    position: absolute;
-    bottom: -30px;
-    left: 50%;
-    transform: translate(-50%, -28px);
-  }
+  --move-offset: calc(var(--card-radius) - 8px);
   img {
     border-radius: 16px 16px 0 0;
-    box-shadow: 0 0 22px rgba(0, 0, 0, 0.35);
+    box-shadow: 0 0 22px #8F689C59;
+    position: absolute;
+    bottom: 0;
   }
   .img-1,
   .img-4 {
-    transform: translateX(calc(-1 * var(--move-offset)));
+    left: var(--move-offset);
+  }
+  .img-3 {
+    left: 50%;
+    transform: translateX(-50%);
   }
   .img-2,
   .img-5 {
-    transform: translateX(var(--move-offset));
+    right: var(--move-offset);
   }
 `;
 const DemoRow = styled.div`
@@ -160,6 +209,7 @@ const JoinCol = styled.div`
   display: flex;
   flex-direction: column;
   width: 250px;
+  row-gap: 12px;
   img {
     border-radius: 12px;
   }
@@ -180,18 +230,32 @@ const JoinCol = styled.div`
     }
   }
 `;
+const FeatureImage = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 48px;
+  height: 48px;
+`;
 const FeatureCard = styled.div`
   text-align: center;
-  border: 1px solid black;
   border-radius: 24px;
-  padding: 28px 22px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.45);
+  padding: 28px 18px;
+  box-shadow: 0 0 15px #D6BEE572;
+  background: #FCFCFD;
   .card-title {
+    letter-spacing: -0.02em;
     font-size: 24px;
-    margin: 12px 0 6px;
+    margin: 13px 0 12px;
+    font-weight: 700;
+    color: var(--c-accent-purple);
   }
   .card-description {
-    font-size: 16px;
+    line-height: 1.4em;
+    letter-spacing: -0.024em;
+  }
+  ${FeatureImage} {
+    margin: 0 auto;
   }
 `;
 const FeatureList = styled.div`
@@ -202,7 +266,7 @@ const FeatureList = styled.div`
 `;
 const DemoSection = styled.section`
   ${SectionDescription} {
-    margin: 40px auto 80px;
+    margin: 62px auto 81px;
   }
 `;
 const JoinSection = styled.section`
@@ -215,23 +279,26 @@ const JoinSection = styled.section`
   ${Button} {
     padding: 0 40px;
     margin-top: 24px;
-    height: 52px;
+    height: 50px;
     border-radius: 52px;
+    font-size: 16px;
   }
   ${SectionDescription} {
-    width: 600px;
+    width: 596px;
+    padding: 17px;
   }
 `;
 const FeaturesSection = styled.section`
-  margin-bottom: 175px;
+  padding: 10px 0 175px;
   ${SectionDescription} {
-    margin-bottom: 60px;
+    margin-bottom: 55px;
   }
 `;
 const Footer = styled.footer`
   background: var(--c-accent-purple);
   padding: 48px 0;
   color: white;
+  letter-spacing: -0.01em;
   ul {
     display: flex;
     justify-content: center;
@@ -242,7 +309,7 @@ const Footer = styled.footer`
     }
   }
   p {
-    margin-top: 48px;
+    margin-top: 54px;
   }
 `;
 
@@ -269,11 +336,11 @@ function App() {
               </HeaderLink>
             </a>
           </HeaderLinks>
-          <div>
-            <Button><img src={servicesImg} alt="Services"/></Button>
-            <Button className="wide">Sign In</Button>
-            <Button className="wide accent">Sign Up</Button>
-          </div>
+          <HeaderUser>
+            <Button className="services"><img src={servicesImg} alt="Services" /></Button>
+            <Button className="wide">Log In</Button>
+            <Button className="wide accent bold border">Sign Up</Button>
+          </HeaderUser>
           </Container>
       </Header>
       <PhotoBlock>
@@ -291,35 +358,25 @@ function App() {
           <DemoRow>
             <DemoCard>
               <p className="card-title">Lorem ipsum dolor sit amet consectetur</p>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p className="card-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con. Ut enim ad minim veniam, quis nostrud exercitation.</p>
               <DemoCardPhoto>
-                <div className="img-wrapper">
-                  <img src={demoPhoneImg1} alt="Phone" className="img-1" />
-                </div>
-                <div className="img-wrapper">
-                  <img src={demoPhoneImg2} alt="Phone" className="img-2" />
-                </div>
+                <img src={demoPhoneImg1} alt="Phone" className="img-1" />
+                <img src={demoPhoneImg2} alt="Phone" className="img-2" />
               </DemoCardPhoto>
             </DemoCard>
             <DemoCard>
               <p className="card-title">Lorem ipsum dolor sit amet consectetur</p>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p className="card-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con. Ut enim ad minim veniam, quis nostrud exercitation.</p>
               <DemoCardPhoto>
-                <div className="img-wrapper">
-                  <img src={demoPhoneImg3} alt="Phone" className="img-3" />
-                </div>
+                <img src={demoPhoneImg3} alt="Phone" className="img-3" />
               </DemoCardPhoto>
             </DemoCard>
             <DemoCard>
               <p className="card-title">Lorem ipsum dolor sit amet consectetur</p>
-              <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+              <p className="card-description">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con. Ut enim ad minim veniam, quis nostrud exercitation.</p>
               <DemoCardPhoto>
-                <div className="img-wrapper">
-                  <img src={demoPhoneImg4} alt="Phone" className="img-4" />
-                </div>
-                <div className="img-wrapper">
-                  <img src={demoPhoneImg5} alt="Phone" className="img-5" />
-                </div>
+                <img src={demoPhoneImg4} alt="Phone" className="img-4" />
+                <img src={demoPhoneImg5} alt="Phone" className="img-5" />
               </DemoCardPhoto>
             </DemoCard>
           </DemoRow>
@@ -354,38 +411,50 @@ function App() {
       <FeaturesSection>
         <Container>
           <SectionDescription className="left">
-            <p className="desc-txt-large">Key features of Wisdocity</p>
+            <p className="desc-txt-large">Key Features of Wisdocity</p>
             <p className="desc-txt-below">Wisdocity offers a range of powerful features designed to enhance your learning experience:</p>
           </SectionDescription>
           <FeatureList>
             <FeatureCard>
-              <img src={featureImg1} alt="Icon" />
-              <p className="card-title">Lorem Ipsum</p>
-              <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias possimus quas quisquam, voluptatibus!</p>
+              <FeatureImage>
+                <img src={featureImg1} alt="Icon" />
+              </FeatureImage>
+              <p className="card-title">Virtual Avatar</p>
+              <p className="card-description">Interact with industry experts through lifelike virtual avatars for personalized guidance.</p>
             </FeatureCard>
             <FeatureCard>
-              <img src={featureImg2} alt="Icon" />
-              <p className="card-title">Lorem Ipsum</p>
-              <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias possimus quas quisquam, voluptatibus!</p></FeatureCard>
+              <FeatureImage>
+                <img src={featureImg2} alt="Icon" />
+              </FeatureImage>
+              <p className="card-title">Wisdom Repository</p>
+              <p className="card-description">Access a continually updated repository of expert knowledge for up-to-date insights.</p></FeatureCard>
             <FeatureCard>
-              <img src={featureImg3} alt="Icon" />
-              <p className="card-title">Lorem Ipsum</p>
-              <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias possimus quas quisquam, voluptatibus!</p>
+              <FeatureImage>
+                <img src={featureImg3} alt="Icon" />
+              </FeatureImage>
+              <p className="card-title">Rating System</p>
+              <p className="card-description">Rate expert responses and contribute to the improvement of the platform.</p>
             </FeatureCard>
             <FeatureCard>
-              <img src={featureImg1} alt="Icon" />
-              <p className="card-title">Lorem Ipsum</p>
-              <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias possimus quas quisquam, voluptatibus!</p>
+              <FeatureImage>
+                <img src={featureImg1} alt="Icon" />
+              </FeatureImage>
+              <p className="card-title">Community Support</p>
+              <p className="card-description">Join a supportive community of learners and experts to nurture your growth.</p>
             </FeatureCard>
             <FeatureCard>
-              <img src={featureImg2} alt="Icon" />
-              <p className="card-title">Lorem Ipsum</p>
-              <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias possimus quas quisquam, voluptatibus!</p>
+              <FeatureImage>
+                <img src={featureImg2} alt="Icon" />
+              </FeatureImage>
+              <p className="card-title">Continuous Learning</p>
+              <p className="card-description">Keep up with the latest industry trends and best practices.</p>
             </FeatureCard>
             <FeatureCard>
-              <img src={featureImg3} alt="Icon" />
-              <p className="card-title">Lorem Ipsum</p>
-              <p className="card-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa eius molestias possimus quas quisquam, voluptatibus!</p>
+              <FeatureImage>
+                <img src={featureImg3} alt="Icon" />
+              </FeatureImage>
+              <p className="card-title">Feedback Loop</p>
+              <p className="card-description">Provide constructive feedback to help experts refine their advisory skills.</p>
             </FeatureCard>
           </FeatureList>
         </Container>
