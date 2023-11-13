@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import Button from '../components/ui/Button';
+
 import logoImg from '../assets/img/logo.png';
 import expertsImg from '../assets/img/header/experts.png';
 import learnersImg from '../assets/img/header/learners.png';
@@ -33,28 +35,28 @@ const LabeledIcon = styled.div`
   display: flex;
   align-items: center;
 `;
-const Button = styled.button`
-  border: none;
-  outline: none;
-  background: none;
-  cursor: pointer;
-  font-family: Nunito, Calibri, Arial, sans-serif;
-  &.wide {
-    min-width: 138px;
-    height: 46px;
-    border-radius: 23px;
-  }
-  &.accent {
-    background: #8726B9;
-    color: white;
-  }
-  &.bold {
-    font-weight: 700;
-  }
-  &.border {
-    border: 1px solid var(--c-accent-purple);
-  }
-`;
+// const Button = styled.button`
+//   border: none;
+//   outline: none;
+//   background: none;
+//   cursor: pointer;
+//   font-family: Nunito, Calibri, Arial, sans-serif;
+//   &.wide {
+//     min-width: 138px;
+//     height: 46px;
+//     border-radius: 23px;
+//   }
+//   &.accent {
+//     background: #8726B9;
+//     color: white;
+//   }
+//   &.bold {
+//     font-weight: 700;
+//   }
+//   &.border {
+//     border: 1px solid var(--c-accent-purple);
+//   }
+// `;
 const HeaderLogo = styled(LabeledIcon)`
   font-family: Futura, Calibri, Arial, sans-serif;
   span {
