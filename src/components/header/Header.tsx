@@ -2,18 +2,27 @@ import React from 'react';
 
 import Button from "../button/Button";
 
-import logoImg from './assets/logo.png';
+import logo from './assets/logo.svg';
 
 import styles from './Header.module.css';
+import button from "../button/Button";
 
 const Header = () => {
+    const handleClick = (e: any) => {
+        console.log(e);
+    };
+
     return (
         <header className={styles.header}>
-            <p>Wisdocity.ai</p>
-                <div>
-                    <Button className="wide border">Log In</Button>
-                    <img src={logoImg} alt="Logo"/>
-                </div>
+            <a className={styles.logo} href="#">Wisdocity.ai</a>
+            <div>
+                <Button
+                    isWide
+                    hasBorder
+                    onClick={() => {}}
+                >Log In</Button>
+                <img src={logo} alt="Logo"/>
+            </div>
         </header>
     );
 };

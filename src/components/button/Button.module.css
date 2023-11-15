@@ -1,24 +1,29 @@
-/*import styled from 'styled-components';*/
+button {
+    border: none;
+    outline: none;
+    background: none;
+    cursor: pointer;
+    font-family: Nunito, Calibri, Arial, sans-serif;
+    transition: 0.2s;
+}
 
-/*export default styled.button`*/
-/*border: none;*/
-/*outline: none;*/
-/*background: none;*/
-/*cursor: pointer;*/
-/*font-family: Nunito, Calibri, Arial, sans-serif;*/
-/*&.wide {*/
-/*    min-width: 138px;*/
-/*    height: 46px;*/
-/*    border-radius: 23px;*/
-/*}*/
-/*&.accent {*/
-/*    background: var(--c-purple02);*/
-/*    color: white;*/
-/*}*/
-/*&.bold {*/
-/*    font-weight: 700;*/
-/*}*/
-/*&.border {*/
-/*    border: 1px solid var(--c-accent-purple);*/
-/*}*/
-/*`;*/
+.wide {
+    min-width: 8.5em;
+    height: 2.9em;
+    border-radius: 23px;
+}
+
+.accent {
+    background: var(--c-purple02);
+    color: white;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.border {
+    color: #8419BB;
+    border-color: #8419BB !important;
+    border: 1px solid var(--c-accent-purple);
+}

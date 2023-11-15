@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 import Button from '../components/button/Button';
 
-import logoImg from '../components/header/assets/logo.png';
+import logoImg from '../components/header/assets/logo.svg';
 import expertsImg from '../assets/img/header/experts.png';
 import learnersImg from '../assets/img/header/learners.png';
 import servicesImg from '../assets/img/header/services.png';
@@ -79,13 +79,7 @@ const HeaderLinks = styled.div`
   }
 `;
 const HeaderUser = styled.div`
-  ${Button} {
-    margin-left: 6px;
-    &.services {
-      width: 46px;
-      height: 46px;
-    }
-  }
+  
 `;
 const Header = styled.header`
   height: 90px;
@@ -278,13 +272,7 @@ const JoinSection = styled.section`
     align-items: center;
     margin: 160px auto;
   }
-  ${Button} {
-    padding: 0 40px;
-    margin-top: 24px;
-    height: 50px;
-    border-radius: 52px;
-    font-size: 16px;
-  }
+
   ${SectionDescription} {
     width: 596px;
     padding: 17px;
@@ -339,9 +327,9 @@ function Home() {
                         </a>
                     </HeaderLinks>
                     <HeaderUser>
-                        <Button className="services"><img src={servicesImg} alt="Services" /></Button>
-                        <Button className="wide">Log In</Button>
-                        <Button className="wide accent bold border">Sign Up</Button>
+                        {/*<Button className="services"><img src={servicesImg} alt="Services" /></Button>*/}
+                        {/*<Button className="wide">Log In</Button>*/}
+                        {/*<Button className="wide accent bold border">Sign Up</Button>*/}
                     </HeaderUser>
                 </Container>
             </Header>
@@ -398,7 +386,7 @@ function Home() {
                         <p className="desc-txt-large">Lorem ipsum dolor sit amet consectetur</p>
                         <p className="desc-txt-below">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo con. Ut enim ad minim veniam, quis nostrud exercitation.</p>
                         <div>
-                            <Button className="wide accent">Become an expert</Button>
+                            {/*<Button className="wide accent">Become an expert</Button>*/}
                         </div>
                     </SectionDescription>
                     <JoinCol className="right">

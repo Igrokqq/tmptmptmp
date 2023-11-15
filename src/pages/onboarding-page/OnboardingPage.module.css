@@ -11,6 +11,13 @@
     width: 14.5em;
 }
 
+.row {
+    display: flex;
+    justify-content: center;
+    column-gap: 12px;
+    margin: 32px 0;
+}
+
 .already {
     text-align: center;
     margin-top: 32px;

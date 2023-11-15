@@ -1,40 +1,36 @@
-import React, { useState } from 'react';
+import React, {ChangeEvent, useState} from 'react';
 import { useNavigate } from 'react-router-dom';
 
 import Layout from "../../components/layout/Layout";
 import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 import AvatarUpload from "../../components/avatar-upload/AvatarUpload";
+
 import styles from './RegistrationFormPage.module.css';
 
 const RegistrationFormPage = () => {
     const navigate = useNavigate();
 
-    const [state, setState] = useState({
-        email: "",
+    const [formData, setFormData] = useState({
+        fullname: "",
         password: "",
-        errors: false
+        selectedCountry: "",
     });
-
-    const { email, errors, password } = state;
+    console.log(formData);
+    const { fullname, password, selectedCountry } = formData;
 
     const handleChange = (e: any) => {
         const { name, value } = e.target;
-        setState((prevState) => ({
-            ...prevState,
-            [name]: value
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
         }));
     };
 
     const handleSubmit = (e: any) => {
         e.preventDefault();
-        const errors = !email || !password;
-        setState((prevState) => ({
-            ...prevState,
-            errors
-        }));
-
-        if (!errors) {
+        const errors = !fullname || !password || !selectedCountry;
+        if (true) {
             navigate('/become-a-learner/verify-email');
         }
     };
@@ -44,40 +40,36 @@ const RegistrationFormPage = () => {
         console.log('Uploading file:', file);
     };
 
-    const [selectedCountry, setSelectedCountry] = useState('');
-    const [countryErrors, setCountryErrors] = useState(false);
-
-    const handleCountryChange = () => {
-        // name: string, value: string
-        // setSelectedCountry(value);
-        // Add validation logic if needed
+    const handleCountryChange = (e: ChangeEvent<HTMLSelectElement>) => {
+        const { name, value } = e.target;
+        setFormData((prevData) => ({
+            ...prevData,
+            [name]: value,
+        }));
     };
-
     return (
         <Layout title={"Welcome"}>
-            <form onSubmit={handleSubmit}>
+            <form className={styles.registrationForm} onSubmit={handleSubmit}>
                 <Input
                     required
-                    icon="email"
                     type="text"
-                    name="email"
+                    name="fullname"
                     label="Full name"
                     placeholder="Jenny Wilson"
-                    value={email}
-                    errors={errors}
+                    className={styles.input}
+                    value={fullname}
                     onChange={handleChange}
                 />
                 <AvatarUpload onUpload={handleUpload}/>
-                {/* Include logic to populate country options */}
                 <Input
                     required
                     icon="email"
                     type="select"
-                    name="email"
+                    name="selectedCountry"
                     label="Country"
                     placeholder="Choose"
                     value={selectedCountry}
-                    errors={countryErrors}
+                    // @ts-ignore
                     onChange={handleCountryChange}
                 />
                 <Input
@@ -88,14 +80,21 @@ const RegistrationFormPage = () => {
                     label="Password"
                     placeholder="Create password"
                     value={password}
-                    errors={errors}
                     onChange={handleChange}
                 />
-                <div>
-                    <Button type="button" className="wide accent">Cancel</Button>
-                </div>
-                <div>
-                    <Button type="submit" className="wide accent">Next</Button>
+                <div className={styles.buttons}>
+                    <Button
+                        className={styles.button}
+                        isWide
+                        hasBorder
+                        type="button"
+                    >Cancel</Button>
+                    <Button
+                        className={styles.button}
+                        isAccent
+                        isWide
+                        type="submit"
+                    >Next</Button>
                 </div>
             </form>
             <p className={styles.already}>

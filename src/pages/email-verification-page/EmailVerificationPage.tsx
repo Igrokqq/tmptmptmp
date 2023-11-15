@@ -53,9 +53,12 @@ const EmailVerificationPage = () => {
                     errors={errors}
                     onChange={handleChange}
                 />
-                <div>
-                    <Button type="submit" className="wide accent">Join</Button>
-                </div>
+                <Button
+                    className={styles.buttonConfirm}
+                    isAccent
+                    isWide
+                    type="submit"
+                >Confirm</Button>
             </form>
             <p className={styles.already}>
                 Already have an account? <a href="#">Log In</a>

@@ -1,19 +1,27 @@
-.buttons {
+.socialButtons {
     display: flex;
     justify-content: center;
     column-gap: 16px;
 }
 
-.button {
+.socialButton {
     border: 1px solid #D9D9EB;
-    width: 116px;
-    height: 56px;
+    padding: 0.8em 2.7em;
     border-radius: 16px;
-    background: none;
-    outline: none;
-    &:active {
+
+    &:active,
+    &:hover,
+    &:focus {
         border-color: var(--c-purple02) !important;
     }
+}
+
+.buttonContinue {
+    width: 23em;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .or {
@@ -21,24 +29,18 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 38px 0;
+    margin: 3em 0;
+
     &:before,
     &:after {
         content: '';
         display: block;
-        width: 172px;
+        width: 16em;
         height: 1px;
         background: #B4BFD1;
         margin: 0 7px;
     }
 }
-
-/*${Button}.page-cowiem {*/
-/*    margin: 0 auto;*/
-/*    display: block;*/
-/*    width: 372px;*/
-/*}*/
-/*`;*/
 
 .already {
     text-align: center;
