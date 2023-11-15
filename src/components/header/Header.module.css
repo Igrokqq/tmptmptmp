@@ -1,0 +1,34 @@
+header {
+    height: 72px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: white;
+    border-bottom: 1px solid #E4DEE7;
+    box-shadow: 0 4px 10px #B2A0BB26;
+}
+
+/*& > p {*/
+/*    font-family: Nunito, Calibri, Arial, sans-serif;*/
+/*    font-weight: 600;*/
+/*    font-size: 24px;*/
+/*    margin-left: 130px;*/
+/*}*/
+/*& > div {*/
+/*    margin-right: 40px;*/
+/*    height: 40px;*/
+
+/*    & img {*/
+/*        height: 100%;*/
+/*        vertical-align: top;*/
+/*    }*/
+
+/*    & button {*/
+/*        height: 100% !important;*/
+/*        color: #8419BB;*/
+/*        border-color: #8419BB !important;*/
+/*        margin-right: 32px;*/
+/*    }*/
+/*}*/
+
+

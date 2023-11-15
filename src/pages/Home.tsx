@@ -1,9 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../components/ui/Button';
+import Button from '../components/button/Button';
 
-import logoImg from '../assets/img/logo.png';
+import logoImg from '../components/header/assets/logo.png';
 import expertsImg from '../assets/img/header/experts.png';
 import learnersImg from '../assets/img/header/learners.png';
 import servicesImg from '../assets/img/header/services.png';

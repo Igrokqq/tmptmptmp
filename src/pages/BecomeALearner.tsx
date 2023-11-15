@@ -1,54 +1,17 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import Button from '../components/ui/Button';
-import BcLrPage1 from '../components/bcm-a-lrnr-pages/BcLrPage1';
-import BcLrPage2 from '../components/bcm-a-lrnr-pages/BcLrPage2';
+import Header from "../components/header/Header";
+import ModalWrapper from "../components/modal-wrapper/ModalWrapper";
+import Modal from "../components/modal/Modal";
+import WelcomePage from "./welcome-page/WelcomePage";
+import JoinPage from "./join-page/JoinPage";
+import RegistrationFormPage from "./registration-form-page/RegistrationFormPage";
+import VerifyEmailPage from "./verify-email-page/VerifyEmailPage";
+import EmailVerificationPage from "./email-verification-page/EmailVerificationPage";
+import CongratsPage from "./congrats-page/CongratsPage";
+import { Routes, Route } from "react-router-dom";
 
-import logoImg from '../assets/img/logo.png';
-
-const Header = styled.header`
-  height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: white;
-  border-bottom: 1px solid #E4DEE7;
-  box-shadow: 0 4px 10px #B2A0BB26;
-  & > p {
-    font-family: Nunito, Calibri, Arial, sans-serif;
-    font-weight: 600;
-    font-size: 24px;
-    margin-left: 130px;
-  }
-  & > div {
-    margin-right: 40px;
-    height: 40px;
-    img {
-      height: 100%;
-      vertical-align: top;
-    }
-    button {
-      height: 100% !important;
-      color: #8419BB;
-      border-color: #8419BB !important;
-      margin-right: 32px;
-    }
-  }
-`;
-const Modal = styled.div`
-  width: 528px;
-  padding: 24px;
-  border-radius: 16px;
-  background: white;
-  box-shadow: 0 0 22px #B4BFD159;
-`;
-const ModalWrapper = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-grow: 1;
-`;
 const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -58,17 +21,17 @@ const Wrapper = styled.div`
 function BecomeALearner() {
     return (
         <Wrapper>
-            <Header>
-                <p>Wisdocity.ai</p>
-                <div>
-                    <Button className="wide border">Log In</Button>
-                    <img src={logoImg} alt="Logo"/>
-                </div>
-            </Header>
+            <Header />
             <ModalWrapper>
                 <Modal>
-                    <BcLrPage1 hidden />
-                    <BcLrPage2 />
+                    <Routes>
+                        <Route path="/" element={<WelcomePage />} />
+                        <Route path="/join" element={<JoinPage />} />
+                        <Route path="/registration" element={<RegistrationFormPage />} />
+                        <Route path="/verify-email" element={<VerifyEmailPage />} />
+                        <Route path="/email-verification" element={<EmailVerificationPage />} />
+                        <Route path="/congrats" element={<CongratsPage />} />
+                    </Routes>
                 </Modal>
             </ModalWrapper>
         </Wrapper>

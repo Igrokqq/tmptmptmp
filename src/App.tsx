@@ -5,16 +5,16 @@ import Home from './pages/Home';
 import BecomeALearner from './pages/BecomeALearner';
 
 function App() {
-  return (
-    <div>
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/become-a-learner" element={<BecomeALearner />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+    return (
+        <div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+                    <Route path="/become-a-learner/*" element={<BecomeALearner />} />
+                </Routes>
+            </BrowserRouter>
+        </div>
+    );
 }
 
 export default App;
