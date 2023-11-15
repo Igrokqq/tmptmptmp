@@ -1,13 +1,22 @@
+/* Global styles */
+
+@import './reset.css';
+@import 'fonts/fonts.css';
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+  font-family: 'Nunito Sans', Calibri, Arial, sans-serif;
+  color: #321841;
+  font-size: 16px;
+  background: var(--c-body);
+  /*zoom: 1.32; !* TEMP *!*/
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  --c-body: #F9F7FB;
+  --c-accent-purple: #64108F;
+  --c-purple02: #8726B9;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
 }
