@@ -1,6 +1,6 @@
 import React, { ChangeEvent, useState } from 'react';
 
-import avatarUpload from './assets/avatar.png';
+import iconUpload from './assets/icon-upload.svg';
 
 interface AvatarUploadProps {
     onUpload: (file: File) => void;
@@ -22,7 +22,7 @@ const AvatarUpload: React.FC<AvatarUploadProps> = ({ onUpload }) => {
     return (
         <div>
             <label htmlFor="fileInput" style={{ cursor: 'pointer' }}>
-                <img src={avatarUpload} alt="Avatar upload"/>
+                <img src={iconUpload} alt="Avatar upload"/>
                 <span style={{ marginLeft: '8px' }}>Upload Avatar</span>
             </label>
             <input
@@ -35,7 +35,6 @@ const AvatarUpload: React.FC<AvatarUploadProps> = ({ onUpload }) => {
             {selectedFile && (
                 <div>
                     <p>Selected File: {selectedFile.name}</p>
-                    {/* You can add an image preview here if needed */}
                 </div>
             )}
         </div>

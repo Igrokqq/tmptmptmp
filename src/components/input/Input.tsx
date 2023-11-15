@@ -1,40 +1,17 @@
-// import React, { ChangeEvent } from 'react';
-//
-// interface CustomInputProps {
-//     value: string;
-//     onChange: (value: string) => void;
-// }
-//
-// const Input: React.FC<CustomInputProps> = ({ value, onChange }) => {
-//     const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
-//         onChange(event.target.value);
-//     };
-//
-//     return (
-//         <input
-//             type="text"
-//             value={value}
-//             onChange={handleInputChange}
-//             placeholder="Enter text"
-//         />
-//     );
-// };
-//
-// export default Input;
-
 import * as React from "react";
-// import styled from "@emotion/styled";
+import {inspect} from "util";
 // import Errors from "../Errors";
 // import Icon from "../Icon";
+import styles from './Input.module.css';
 
-// Define the props interface
+
 interface InputComponentProps {
     className?: string;
     containerStyle?: React.CSSProperties;
     errors?: boolean;
     disabled?: boolean;
     label: string;
-    icon?: string; // Assuming that the icon is a string, you can adjust the type accordingly
+    icon?: string;
     inputStyle?: React.CSSProperties;
     name: string;
     onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
@@ -70,9 +47,8 @@ const Input: React.FC<InputComponentProps> = ({
     };
 
     return (
-        <div className={className} style={wrapperStyle}>
-            <label htmlFor={label}>{label}</label>
-            <div onClick={handleClick} className="container" style={containerStyle}>
+        <div onClick={handleClick} className={styles.container} style={containerStyle}>
+            <label className={styles.label} htmlFor={label}>{label}</label>
                 {/*{icon && <Icon dataTestId={`icon-${name}`} type={icon} />}*/}
                 {type === 'select' ? (
                     <select
@@ -93,6 +69,7 @@ const Input: React.FC<InputComponentProps> = ({
                     ref={inputRef}
                     aria-label={name}
                     data-testid={name}
+                    className={className}
                     tabIndex={0}
                     type={type}
                     name={name}
@@ -104,8 +81,7 @@ const Input: React.FC<InputComponentProps> = ({
                     readOnly={readOnly}
                 />
                 )}
-            </div>
-            {type === 'password' && <label htmlFor={label}>8 or more characters</label>}
+            {type === 'password' && <label className={styles.label} htmlFor={label}>8 or more characters</label>}
             {/*{error && <p className="error">Input filed can't be empty!</p>}*/}
             {/*{errors && !value && required && (*/}
             {/*    <Errors data-testid="errors">Required!</Errors>*/}
