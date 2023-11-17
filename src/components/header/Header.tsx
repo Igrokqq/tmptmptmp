@@ -5,7 +5,6 @@ import Button from "../button/Button";
 import logo from './assets/logo.svg';
 
 import styles from './Header.module.css';
-import button from "../button/Button";
 
 const Header = () => {
     const handleClick = (e: any) => {

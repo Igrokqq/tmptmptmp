@@ -1,47 +1,37 @@
-// import styled from "@emotion/styled";
-//
-// const Container = styled.div`
-//   padding: 20px;
-// `;
-//
-// export default Container;
-
 import styles from './Button.module.css';
 
 import React from 'react';
 
 interface Props {
     className?: string;
-    border?: string;
-    color?: string;
     children?: React.ReactNode;
-    height?: string;
     onClick?: () => void;
     wrapperStyle?: React.CSSProperties;
     disabled?: boolean;
     type?: "button" | "reset" | "submit" | undefined;
     isWide?: boolean;
+    isLong?: boolean;
     isAccent?: boolean;
     isBold?: boolean;
+    isCenter?: boolean;
     hasBorder?: boolean;
 }
 
 const Button: React.FC<Props> = ({
      className,
-     border,
-     color,
      children,
-     height,
      onClick,
      type,
      disabled,
      wrapperStyle,
-     isWide = false, // Default value is false
+     isWide = false,
+     isLong,
      isAccent,
      isBold,
+     isCenter,
      hasBorder,
  }) => {
-    const classNames = `${className ? className : ''} ${isWide ? styles.wide : ''} ${isAccent ? styles.accent : ''} ${isBold ? styles.bold : ''} ${hasBorder ? styles.border : ''}`;
+    const classNames = `${className ? className : null} ${isCenter ? styles.center : ''} ${isWide ? styles.wide : ''} ${isLong ? styles.long : ''} ${isAccent ? styles.accent : ''} ${isBold ? styles.bold : ''} ${hasBorder ? styles.border : ''}`;
 
     return (
         <button

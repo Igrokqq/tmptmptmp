@@ -3,15 +3,24 @@ import { useNavigate } from 'react-router-dom';
 
 import Layout from '../../components/layout/Layout';
 import Button from '../../components/button/Button';
+import Already from "../../components/already/Already";
+import ModalHeader from "../../components/modal-header/ModalHeader";
 
 import styles from './JoinPage.module.css';
 
-const JoinPage = () => {
+interface JoinPageProps {
+    isExpert: boolean;
+}
+
+const JoinPage: React.FC<JoinPageProps> = ({ isExpert }) => {
     const navigate = useNavigate();
-    const [isChecked, setChecked] = useState(false);
+    const [isChecked, setChecked] = useState(isExpert);
 
     const handleJoin = () => {
-        navigate('/become-a-learner/registration');
+        if (isChecked) {
+            return navigate('/become-an-expert/registration');
+        }
+        return navigate('/become-a-learner/registration');
     };
 
     const handleRadioChange = () => {
@@ -19,7 +28,8 @@ const JoinPage = () => {
     };
 
     return (
-        <Layout title={"Join as a learner or an expert"}>
+        <Layout>
+            <ModalHeader title={"Join as a learner or an expert"}/>
             <form onSubmit={handleJoin}>
                 <div className={styles.row}>
                     <div
@@ -37,18 +47,15 @@ const JoinPage = () => {
                         <span>I'm a learner, want to...</span>
                     </div>
                 </div>
-                <div>
-                    <Button
-                        className={styles.buttonJoin}
-                        isAccent
-                        isWide
-                        type="submit"
-                    >Join</Button>
-                </div>
+                <Button
+                    className={styles.buttonJoin}
+                    type="submit"
+                    isAccent
+                    isWide
+                    isCenter
+                >Join</Button>
             </form>
-            <p className={styles.already}>
-                Already have an account? <a href="#">Log In</a>
-            </p>
+            <Already/>
         </Layout>
     );
 };

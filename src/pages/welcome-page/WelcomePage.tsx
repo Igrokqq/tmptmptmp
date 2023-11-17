@@ -3,6 +3,8 @@ import { useNavigate } from 'react-router-dom';
 
 import Layout from "../../components/layout/Layout";
 import Button from "../../components/button/Button";
+import Already from "../../components/already/Already";
+import ModalHeader from "../../components/modal-header/ModalHeader";
 
 import iconGoogle from './assets/icon_google.svg';
 import iconFacebook from './assets/icon_facebook.svg';
@@ -13,15 +15,12 @@ import styles from './WelcomePage.module.css';
 const WelcomePage = () => {
     const navigate = useNavigate();
 
-    const handleContinueWithEmail = () => {
-        navigate('/become-a-learner/join');
-    };
-
     return (
-        <Layout
-            title={"Welcome to Wisdocity"}
-            subtitle={"Let's create an account"}
-        >
+        <Layout>
+            <ModalHeader
+                title={"Welcome to Wisdocity"}
+                subtitle={"Let's create an account"}
+            />
             <div className={styles.socialButtons}>
                 <Button className={styles.socialButton}>
                     <img src={iconGoogle} alt="Google"/>
@@ -36,13 +35,11 @@ const WelcomePage = () => {
             <p className={styles.or}>OR</p>
             <Button
                 className={styles.buttonContinue}
+                onClick={() => navigate('/become-a-learner/join')}
                 isAccent
                 isWide
-                onClick={handleContinueWithEmail}
             >Continue with email</Button>
-            <p className={styles.already}>
-                Already have an account? <a href="#">Log In</a>
-            </p>
+            <Already/>
         </Layout>
     );
 };

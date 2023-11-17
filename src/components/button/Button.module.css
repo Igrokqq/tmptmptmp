@@ -8,14 +8,13 @@ button {
 }
 
 .wide {
-    min-width: 8.5em;
-    height: 2.9em;
-    border-radius: 23px;
+    padding: 0.6em 4em;
+    border-radius: 10em;
 }
 
 .accent {
     background: var(--c-purple02);
-    color: white;
+    color: white !important;
 }
 
 .bold {
@@ -26,4 +25,21 @@ button {
     color: #8419BB;
     border-color: #8419BB !important;
     border: 1px solid var(--c-accent-purple);
+}
+
+.border {
+    color: #8419BB;
+    border-color: #8419BB !important;
+    border: 1px solid var(--c-accent-purple);
+}
+
+.long {
+    width: 100%;
+}
+
+.center {
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

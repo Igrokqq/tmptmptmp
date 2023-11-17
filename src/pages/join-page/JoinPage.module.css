@@ -34,10 +34,7 @@
 }
 
 .buttonJoin {
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
 }
 
 .row {
@@ -45,15 +42,4 @@
     justify-content: center;
     column-gap: 12px;
     margin: 32px 0;
-}
-
-.already {
-    text-align: center;
-    margin-top: 32px;
-
-    & a {
-        cursor: pointer;
-        color: var(--c-accent-purple);
-        font-weight: 700;
-    }
 }
