@@ -1,27 +1,15 @@
 import React from 'react';
 
-import Button from "../button/Button";
-
-import logo from './assets/logo.svg';
-
 import styles from './Header.module.css';
 
-const Header = () => {
-    const handleClick = (e: any) => {
-        console.log(e);
-    };
+interface HeaderProps {
+  children?: React.ReactNode;
+}
 
+const Header: React.FC<HeaderProps> = ({ children }) => {
     return (
         <header className={styles.header}>
-            <a className={styles.logo} href="#">Wisdocity.ai</a>
-            <div>
-                <Button
-                    isWide
-                    hasBorder
-                    onClick={() => {}}
-                >Log In</Button>
-                <img src={logo} alt="Logo"/>
-            </div>
+          {children}
         </header>
     );
 };
