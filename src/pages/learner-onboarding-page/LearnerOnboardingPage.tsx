@@ -13,6 +13,7 @@ import Buttons from "../../components/buttons/Buttons";
 
 // import styles from './LearnerOnboardingPage.module.css';
 
+
 const LearnerOnboardingPage = () => {
     const [page, setPage] = useState(1); // Start with page 1
 
@@ -29,6 +30,7 @@ const LearnerOnboardingPage = () => {
         event.preventDefault()
         const nextPageIndex = page < 4 ? page + 1 : 4;
         setPage(nextPageIndex);
+
     };
 
     const renderCurrentPage = () => {

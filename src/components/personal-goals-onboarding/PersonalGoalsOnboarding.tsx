@@ -52,6 +52,7 @@ import Input from "../input/Input";
 import Button from "../button/Button";
 
 import styles from './PersonalGoalsOnboarding.module.css';
+import {useNavigate} from "react-router-dom";
 
 interface PersonalGoalsInputProps {
     onAddGoal: (newGoal: string) => void;

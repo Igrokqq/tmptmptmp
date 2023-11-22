@@ -6,7 +6,7 @@ interface InputComponentProps {
     className?: string;
     errors?: boolean;
     disabled?: boolean;
-    label: string;
+    label?: string;
     helperMessage?: string;
     inputStyle?: React.CSSProperties;
     name: string;
@@ -47,9 +47,11 @@ const Input: React.FC<InputComponentProps> = ({
             className={styles.inputContainer}
         >
             <div className={styles.labelContainer}>
-                <label className={styles.label} htmlFor={label}>
-                    {label} {required && <span className={styles.required}>*</span>}
-                </label>
+                {label &&
+                    <label className={styles.label} htmlFor={label}>
+                        {label} {required && <span className={styles.required}>*</span>}
+                    </label>
+                }
                 {expires &&
                     <label className={styles.label} htmlFor={label}>
                         {`Expires in 4:59 min`}

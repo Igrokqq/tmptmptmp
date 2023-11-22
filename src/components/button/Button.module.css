@@ -12,19 +12,8 @@ button {
     border-radius: 10em;
 }
 
-.accent {
-    background: var(--c-purple02);
-    color: white !important;
-}
-
 .bold {
     font-weight: 700;
-}
-
-.border {
-    color: #8419BB;
-    border-color: #8419BB !important;
-    border: 1px solid var(--c-accent-purple);
 }
 
 .border {
@@ -42,4 +31,9 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.accent {
+    background: var(--c-purple02);
+    color: white;
 }

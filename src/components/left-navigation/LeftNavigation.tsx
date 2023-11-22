@@ -38,7 +38,7 @@ const LeftNavigation: React.FC<LeftNavigationProps> = ({ activeTab, onTabClick }
     <div className={`${styles.leftNavigation} ${isCollapsed ? styles.collapsed : ''}`}>
       <div className={styles.navigationItems}>
         <div className={styles.navigationItemsTop}>
-          <img src={iconUser} alt={'Icon User'} className={styles.linkIcon} />
+          <img className={styles.linkIcon} src={iconUser} alt={'Icon User'} />
           <Button className={styles.toggleButton} onClick={toggleCollapse}>
             {isCollapsed ? <i className={`${styles.arrow} ${styles.right}`}></i> : <i className={`${styles.arrow} ${styles.left}`}></i>}
           </Button>

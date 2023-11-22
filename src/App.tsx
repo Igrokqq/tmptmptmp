@@ -6,11 +6,11 @@ import BecomeALearner from './pages/become-a-learner/BecomeALearner';
 import BecomeAnExpert from "./pages/become-an-expert/BecomeAnExpert";
 import Learner from "./pages/learner/Learner";
 import HomePage from "./pages/home-page/HomePage";
-import DashboardPage from "./pages/dashboard-page/DashboardPage";
-import ChatsPage from "./pages/chats-page/ChatsPage";
-import CommunityPage from "./pages/community-page/CommunityPage";
-import ProfilePage from "./pages/profile-page/ProfilePage";
-import HelpPage from "./pages/help-page/HelpPage";
+import Dashboard from "./pages/dashboard-page/DashboardPage";
+import Chats from "./pages/chats-page/ChatsPage";
+import Community from "./pages/community-page/CommunityPage";
+import Profile from "./pages/profile/Profile";
+import Help from "./pages/help-page/HelpPage";
 import WelcomePage from "./pages/welcome-page/WelcomePage";
 import JoinPage from "./pages/join-page/JoinPage";
 import LearnerRegistrationPage from "./pages/learner-registration-page/LearnerRegistrationPage";
@@ -37,11 +37,11 @@ function App() {
                     <Route path="/become-an-expert/*" element={<BecomeAnExpert />} />
                     <Route path="/learner" element={<Learner />} >
                         <Route index path="home" element={<HomePage />} />
-                        <Route path="dashboard" element={<DashboardPage />} />
-                        <Route path="chats" element={<ChatsPage />} />
-                        <Route path="community" element={<CommunityPage />} />
-                        <Route path="profile" element={<ProfilePage />} />
-                        <Route path="help" element={<HelpPage />} />
+                        <Route path="dashboard" element={<Dashboard />} />
+                        <Route path="chats" element={<Chats />} />
+                        <Route path="community" element={<Community />} />
+                        <Route path="profile" element={<Profile />} />
+                        <Route path="help" element={<Help />} />
                     </Route>
                 </Routes>
             </BrowserRouter>

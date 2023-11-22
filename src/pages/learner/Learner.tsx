@@ -16,11 +16,9 @@ const Learner: React.FC = () => {
   return (
     <div className={styles.learner}>
       <LeanerHeader pageTitle={activeTab}/>
-      <div className={styles.pageContent}>
+      <div className={styles.content}>
         <LeftNavigation activeTab={activeTab} onTabClick={handleTabClick} />
-        <div className={styles.content}>
-          <Outlet />
-        </div>
+        <Outlet />
       </div>
     </div>
   );
