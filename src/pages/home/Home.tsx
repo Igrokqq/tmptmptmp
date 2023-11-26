@@ -334,12 +334,6 @@ function Home() {
             <Button className="services">
               <img src={servicesImg} alt="Services" />
             </Button>
-            <Button isWide className="wide">
-              Log In
-            </Button>
-            <Button isWide isAccent isBold hasBorder>
-              Sign Up
-            </Button>
           </HeaderUser>
         </Container>
       </Header>
