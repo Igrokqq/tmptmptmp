@@ -20,6 +20,7 @@ interface InputComponentProps {
   type?: string;
   showPasswordToggle?: boolean;
   value?: string;
+  container?: React.CSSProperties;
 }
 
 const Input: React.FC<InputComponentProps> = ({
@@ -38,6 +39,7 @@ const Input: React.FC<InputComponentProps> = ({
   type,
   showPasswordToggle,
   value,
+  container,
 }) => {
   const inputRef = React.useRef<HTMLInputElement>(null);
 
@@ -52,7 +54,11 @@ const Input: React.FC<InputComponentProps> = ({
   };
 
   return (
-    <div onClick={handleClick} className={styles.inputContainer}>
+    <div
+      onClick={handleClick}
+      className={styles.inputContainer}
+      style={container}
+    >
       <div className={styles.labelContainer}>
         {label && (
           <label className={styles.label} htmlFor={label}>

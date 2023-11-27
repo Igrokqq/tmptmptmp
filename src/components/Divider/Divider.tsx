@@ -14,8 +14,8 @@ const Divider: FunctionComponent<DividerProps> = ({ text }) => {
   return (
     <div className={styles.divider}>
       <hr className={styles.hr} />
-      {text && <span className={styles["divider-text"]}>{text}</span>}
-      <hr className={styles.hr} />
+      {/* {text && <span className={styles["divider-text"]}>{text}</span>} */}
+      {/* <hr className={styles.hr} /> */}
     </div>
   );
 };
