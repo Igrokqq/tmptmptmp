@@ -35,7 +35,7 @@ const WelcomePage = () => {
             <p className={styles.or}>OR</p>
             <Button
                 className={styles.buttonContinue}
-                onClick={() => navigate('/become-a-learner/join')}
+                onClick={() => navigate('/become-a-learner/registration')}
                 isAccent
                 isWide
             >Continue with email</Button>

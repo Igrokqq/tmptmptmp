@@ -1,0 +1,19 @@
+.button {
+  min-width: 80px;
+  height: 28px;
+  padding: 24px, 24px, 24px, 24px;
+  border-radius: 48px;
+  border: 1px;
+  gap: 4px;
+
+  background: #FFF;
+  border: 1px solid #B3B1C9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #B3B1C9;
+}
+
+.active {
+
+}

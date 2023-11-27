@@ -75,7 +75,7 @@ function BecomeAnExpert() {
         <Modal>
           <Routes>
             <Route path="/" element={<WelcomePage />} />
-            <Route path="/join" element={<JoinPage isExpert={true} />} />
+            {/* <Route path="/join" element={<JoinPage isExpert={true} />} /> */}
             <Route
               path="/registration"
               element={<ExpertRegistrationPage {...commonProps} />}
