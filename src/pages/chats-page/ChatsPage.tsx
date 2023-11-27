@@ -184,21 +184,56 @@ const ChatsPage: React.FC = () => {
     const chat = chatList[selectedChat - 1];
 
     return (
-      <div className='d-flex flex-row'>
-        <div className='d-flex flex-column'>
+      <div className='d-flex flex-row h-100'>
+        <div className='d-flex flex-column justify-content-between'>
           <ChatContactBar chat={chat}/>
-          <div className='mx-5'>
-            <div className="d-flex align-center">
+          <div className="d-flex align-center">
               {chat.tags.map(tag => <Tag className='m-3' name={tag}/>)}
             </div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+
+          <div className='mx-5 d-flex flex-column justify-content-between'>
             <ChatBody messages={[
-              { sender: { id: 1, name: 'Learner', avatarURL: iconUser }, text: 'Hello!', isMe: true },
               { sender: { id: 2, name: 'Expert', avatarURL: iconUser }, text: 'Hi there!', isMe: false },
+              { sender: { id: 1, name: 'Learner', avatarURL: iconUser }, text: 'Hello!', isMe: true },
+
             ]}/>
-            <ChatInput onSendMessage={(text: string) => {}}/>
+                     
           </div>
+          <div></div>
+
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+
+        <div className='mx-5 mb-3 d-flex flex-column justify-content-between'>
+          <ChatInput  onSendMessage={(text: string) => {}}/>
         </div>
-        <div className='d-flex flex-column mt-5'>
+
+ 
+        </div>
+
+        <div className={`${styles.chatsnavbarContainer} d-flex flex-column mt-5`}>
           <ChatsNavBar />
         </div>
       </div>

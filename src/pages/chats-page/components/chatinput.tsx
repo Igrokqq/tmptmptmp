@@ -6,9 +6,10 @@ import sendicon from './ic_round-send.svg'
 
 interface ChatInputProps {
   onSendMessage: (text: string) => void;
+  className?: string;
 }
 
-const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
+const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage, className }) => {
   const [message, setMessage] = useState<string>('');
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
@@ -24,11 +25,11 @@ const ChatInput: React.FC<ChatInputProps> = ({ onSendMessage }) => {
   };
 
   return (
-    <Form className={styles['chat-input']} onSubmit={handleSubmit}>
+    <Form className={`${styles['chat-input']} ${className}`} onSubmit={handleSubmit}>
       <FormControl
         type="text"
         className={styles['send-button-txt']}
-        placeholder="Type your message..."
+        placeholder="Write a message..."
         value={message}
         onChange={handleChange}
       />

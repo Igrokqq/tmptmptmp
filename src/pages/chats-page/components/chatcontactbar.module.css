@@ -3,7 +3,7 @@
   border-radius: 0px, 0px, 1px, 0px;
   background: linear-gradient(0deg, #E8D8F1, #E8D8F1), linear-gradient(0deg, #F9F7FB, #F9F7FB);
   border-bottom: 1px solid #E8D8F1;
-  width: 100%;
+  width: 70vw!important;
 }
 
 .avatar {

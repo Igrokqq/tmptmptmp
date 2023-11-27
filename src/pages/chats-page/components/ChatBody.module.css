@@ -3,13 +3,13 @@
 .chat-body {
   overflow-y: auto;
   height: 300px; /* Adjust the height as needed */
-  border: 1px solid #ccc;
   padding: 10px;
+  max-width: 30rem!important
 }
 
 .message {
   margin-bottom: 10px;
-  padding: 8px;
+  padding: 16px;
 }
 
 .message-sender {
@@ -18,9 +18,25 @@
 }
 
 .me {
-  background-color: #d4edda;
+  position: relative;
+  background: #F4EDF9;
 }
 
 .other {
-  background-color: #cce5ff;
+  position: relative;
+  background: #F4EDF9;
+}
+
+.message-date {
+  position: absolute;
+  bottom: 5px;
+
+  font-family: Nunito Sans;
+  font-size: 10px;
+  font-weight: 400;
+  line-height: 12px;
+  letter-spacing: 0em;
+  text-align: left;
+  color: #6B6985;
+
 }
