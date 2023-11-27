@@ -16,6 +16,7 @@ import Edit from "../../assets/img/svg/edit.svg";
 import Mail from "../../assets/img/svg/mail.svg";
 import Phone from "../../assets/img/svg/phone.svg";
 import Man from "../../assets/img/svg/man.png";
+import { useNavigate } from "react-router";
 
 interface ExpertRegistrationPageProps {
   currentPage?: number;
@@ -34,9 +35,11 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
 }) => {
   const [isToggled1, setIsToggled1] = useState(false);
   const [isToggled2, setIsToggled2] = useState(false);
+  const navigate = useNavigate();
 
   const handleSubmit = (e: any) => {
     e.preventDefault();
+    navigate("/learner/profile");
   };
 
   return (
@@ -50,7 +53,7 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
               alignItems: "center",
             }}
           >
-            <img src={Man} width={"44px"} height={"44px"} />
+            <img src={Man} width={"44px"} height={"44px"} alt="Man" />
             <div
               style={{
                 padding: "10px",
@@ -66,13 +69,13 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
             </div>
           </div>
           <button>
-            <img src={Edit} />
+            <img src={Edit} alt="Edit" />
           </button>
         </div>
         <div className={styles.sectionWithEdit}>
           <Typography className={styles.sectionTitle}>My category</Typography>
           <button>
-            <img src={Edit} />
+            <img src={Edit} alt="Edit" />
           </button>
         </div>
         <div
@@ -122,7 +125,7 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
         <div className={styles.sectionWithEdit}>
           <Typography className={styles.sectionTitle}>Contacts</Typography>
           <button>
-            <img src={Edit} />
+            <img src={Edit} alt="Edit" />
           </button>
         </div>
         <div className="flex-column-wrapper">
@@ -152,7 +155,7 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
         <div className={styles.sectionWithEdit}>
           <Typography className={styles.sectionTitle}>Bio</Typography>
           <button>
-            <img src={Edit} />
+            <img src={Edit} alt="Edit" />
           </button>
         </div>
         <Typography className={styles.section}>
@@ -167,7 +170,7 @@ const ExpertReviewPage: React.FC<ExpertRegistrationPageProps> = ({
             Links to social media
           </Typography>
           <button>
-            <img src={Edit} />
+            <img src={Edit} alt="Edit" />
           </button>
         </div>
         <Link to="https://www.linkedin.com/in/sylvain-duranton/">

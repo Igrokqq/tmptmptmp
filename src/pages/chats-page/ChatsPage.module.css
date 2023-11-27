@@ -27,6 +27,11 @@
   justify-content: space-between;
 }
 
+.chatsnavbarContainer {
+  position: absolute;
+  right: 10px;
+  top: 106px;
+}
 .chatSearch {
   display: flex;
   align-items: center;
