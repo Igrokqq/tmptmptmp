@@ -1,6 +1,5 @@
 .wrapper{
     padding: 24px;
-    z-index: 10000;
     position: absolute; 
     left: 0; 
     right: 0; 
@@ -11,6 +10,9 @@
 
 .dialog{
     width:453px;
+    z-index: 10000;
+
+    position: absolute;
     height: fit-content;
     top: 100px;
     left: 494px;

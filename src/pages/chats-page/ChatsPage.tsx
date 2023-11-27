@@ -184,8 +184,6 @@ const ChatsPage: React.FC = () => {
 
     return (
       <div className="d-flex flex-row h-100">
-        <Dialog />
-
         <div className="d-flex flex-column justify-content-between">
           <ChatContactBar chat={chat} />
           <div className="d-flex align-center">
