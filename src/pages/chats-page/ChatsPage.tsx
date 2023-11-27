@@ -96,6 +96,11 @@ import Button from "../../components/button/Button";
 import Input from "../../components/input/Input";
 
 import iconUser from './assets/icon-user.svg';
+import { Tag } from './components/tag';
+import { ChatContactBar } from './components/chatcontactbar';
+import ChatBody from './components/chatbody';
+import ChatInput from './components/chatinput';
+import ChatsNavBar from './components/chatsnavbar';
 
 // Dummy data for chats
 const chatList = [
@@ -104,14 +109,17 @@ const chatList = [
     name: "Robert Fox",
     title: "Al Expert",
     date: "Oct 1, 2023",
-    group: 'AIChats'
+    group: 'AIChats',
+    tags: ['Investments', 'Finance', 'Dating'],
   },
   {
     id: 2,
     name: "Robert Fox",
     title: "Al Expert",
     date: "Oct 1, 2023",
-    group: 'LiveChats'
+    group: 'LiveChats',
+    tags: ['Investments', 'Finance', 'Dating'],
+    
   },
 ];
 
@@ -158,7 +166,8 @@ const ChatsPage: React.FC = () => {
       name: "Robert Fox",
       title: "Al Expert",
       date: "Oct 1, 2023",
-      group: 'Workshops'
+      group: 'Workshops',
+      tags: ['Investments', 'Finance', 'Dating'],
     };
 
     chatList.push(newChat);
@@ -175,15 +184,29 @@ const ChatsPage: React.FC = () => {
     const chat = chatList[selectedChat - 1];
 
     return (
-      <div>
-        <h3>{chat.name}</h3>
-        <p>{chat.title}</p>
+      <div className='d-flex flex-row'>
+        <div className='d-flex flex-column'>
+          <ChatContactBar chat={chat}/>
+          <div className='mx-5'>
+            <div className="d-flex align-center">
+              {chat.tags.map(tag => <Tag className='m-3' name={tag}/>)}
+            </div>
+            <ChatBody messages={[
+              { sender: { id: 1, name: 'Learner', avatarURL: iconUser }, text: 'Hello!', isMe: true },
+              { sender: { id: 2, name: 'Expert', avatarURL: iconUser }, text: 'Hi there!', isMe: false },
+            ]}/>
+            <ChatInput onSendMessage={(text: string) => {}}/>
+          </div>
+        </div>
+        <div className='d-flex flex-column mt-5'>
+          <ChatsNavBar />
+        </div>
       </div>
     );
   };
 
   return (
-      <div className={styles.chatsPage}>
+      <div className={`${styles.chatsPage}`}>
         <div className={styles.chatList}>
           <Button className={styles.toggleButton} onClick={toggleCollapse}>
             <p>All Chats</p>

@@ -21,6 +21,10 @@ import LearnerOnboardingPage from "./pages/learner-onboarding-page/LearnerOnboar
 import LoginView from "./pages/LoginView";
 import LoginWrapper from "./pages/LoginWrapper/LoginWrapper";
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
+
+
 function App() {
   return (
     <div>

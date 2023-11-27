@@ -6,6 +6,7 @@ import Header from "../header/Header";
 import logo from "../header/assets/logo.svg";
 
 import styles from "./BecomeHeader.module.css";
+import { redirect } from "react-router";
 
 const BecomeHeader: React.FC = () => {
   return (
@@ -14,11 +15,12 @@ const BecomeHeader: React.FC = () => {
         Wisdocity.ai
       </a>
       <div>
-        {/* <Button
+        <Button
+        className="mx-3"
                 isWide
                 hasBorder
-                onClick={() => {}}
-            >Log In</Button> */}
+                onClick={() => {redirect('/login')}}
+            >Log In</Button>
         <img src={logo} alt="Logo" />
       </div>
     </Header>
